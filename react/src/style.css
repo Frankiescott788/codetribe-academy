@@ -1,0 +1,56 @@
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 10;
+    box-shadow: 0 0 10px #42444644;
+}
+
+.nav-btn{
+    margin-left: 20pt;
+}
+
+.parent-element{
+    margin-top: 20vh;
+}
+.submit-btn{
+    padding-inline: 40%;
+}
+.preview-container{
+    height: 39vh;
+    overflow-y: scroll;
+}
+.preview-container::-webkit-scrollbar {
+    display: none;
+}
+.delete-all-btn{
+    background: #ff0000a1;
+    color: white;
+    box-shadow: 0 10px 20px -12px #FF0000;
+}
+.delete-all-btn:hover{
+    background: #ff000077;
+    box-shadow: none;
+}
+.login-icon{
+    border-radius : 50%; 
+    transform : translateY(-55px);
+    z-index : 10;
+    background :  linear-gradient(to right, #667BC6, #667bc696);
+    color : white;
+}
+@media only screen and (max-width : 767px){
+    .add-form{
+        margin-top: 5vh;
+    }
+}
+@media only screen and (max-width : 768px) and (max-width : 1024px){
+    .form-container{
+        margin-top: 10vh;
+    }
+}
+.fab{
+    margin-top: 150px;
+}
