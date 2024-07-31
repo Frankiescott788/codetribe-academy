@@ -1,0 +1,91 @@
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 10;
+    box-shadow: 0 0 10px #42444644;
+    transition: .2s ease-in-out;
+}
+
+.nav-btn{
+    margin-left: 20pt;
+}
+
+.parent-element{
+    margin-top: 20vh;
+}
+.submit-btn{
+    padding-inline: 40%;
+}
+.preview-container{
+    height: 39vh;
+    overflow-y: scroll;
+}
+.preview-container::-webkit-scrollbar {
+    display: none;
+}
+.delete-all-btn{
+    background: #ff0000a1;
+    color: white;
+    box-shadow: 0 10px 20px -12px #FF0000;
+}
+.delete-all-btn:hover{
+    background: #ff000077;
+    box-shadow: none;
+}
+.login-icon{
+    border-radius : 50%; 
+    transform : translateY(-55px);
+    z-index : 10;
+    background :  linear-gradient(to top, #667BC6, #667bc6e3);
+    color : white;
+}
+.edit-btn{
+    background: linear-gradient(to right, #667BC6, #667bc6cb);
+    color: white;
+}
+@media only screen and (max-width : 767px){
+    .add-form{
+        margin-top: 5vh;
+    }
+    .alert{
+        position: fixed;
+        margin-left: 0dvw;
+        display: none;
+        top: 0;
+        z-index: 20;
+        transition: .2s ease-in-out;
+    }
+}
+@media only screen and (max-width : 768px) and (max-width : 1024px){
+    .form-container{
+        margin-top: 10vh;
+    }
+}
+.fab{
+    margin-top: 150px;
+}
+.alert{
+    position: fixed;
+    margin-left: 25dvw;
+    display: none;
+    top: 0;
+    z-index: 20;
+    transition: .2s ease-in-out;
+}
+.show {
+    display: flex;
+    transition: .2s ease-in-out;
+}
+.nav-link {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    font-weight: bold;
+  }
+.nav-link.active {
+    color: #667BC6;
+    font-weight: bold;
+    border-bottom: 2px solid #667BC6;
+  }
