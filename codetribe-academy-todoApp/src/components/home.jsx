@@ -10,7 +10,7 @@ function Home() {
   const [updateValue, setUpdateValue] = useState('');
   const [updateItem, setUpdateItem] = useState('');
 
-  // Function to fetch todos from the server
+
   const fetchTodos = async () => {
     try {
       const res = await axios.get('http://localhost:8080/api/todos');
@@ -20,7 +20,7 @@ function Home() {
     }
   };
 
-  // Function to handle the submission of a new todo
+
   const handleSubmits = async () => {
     try {
       const newTodo = {
@@ -29,14 +29,13 @@ function Home() {
         createdAt: new Date().toISOString()
       };
 
-      // Post the new todo to the server
       const res = await axios.post('http://localhost:8080/api/todos', newTodo);
       const data = res.data;
 
-      // Check if the insertion was successful and update state
+   
       if (data.changes > 0) {
         setTodos(prevTodos => [...prevTodos, { ...newTodo, id: data.id }]);
-        setPostvalue(''); // Clear input field after submission
+        setPostvalue(''); 
       }
       setIsSubmitting(false);
     } catch (error) {
@@ -45,12 +44,12 @@ function Home() {
     }
   };
 
-  // Fetch todos initially on component mount
+
   useEffect(() => {
     fetchTodos();
   }, []);
 
-  // Function to handle updates (e.g., opening modal or other logic)
+
   const handleUpdates = (id, item) => {
     setItemToUpdate(id);
     setUpdateItem(item)
@@ -135,7 +134,7 @@ function Home() {
               ))}
             </div>
           </div>
-          {/* Modal for updates */}
+       
           <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
               <div className="modal-content">
