@@ -13,10 +13,9 @@ import DashboardOverview from "./components/pages/Dashboard/main"
 import Add from "./components/pages/Dashboard/AddRoom/addRoom"
 
 function App() {
-  const {isLoading} = useContext(AuthContext);
+  const { isLoading } = useContext(AuthContext);
   return isLoading ? <Isloading /> : (
     <BrowserRouter>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/signup" element={<Signup />}/>

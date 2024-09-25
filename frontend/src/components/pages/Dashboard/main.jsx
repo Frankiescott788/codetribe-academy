@@ -1,7 +1,9 @@
 import { Button, Card, CardBody, CardHeader, Tooltip } from "@nextui-org/react";
 import StatsChart from "../../../charts/chart";
+import { useNavigate } from "react-router-dom";
 
 export default function DashboardOverview() {
+    const navigate = useNavigate();
     return (
         <section>
             <div className="flex justify-between mx-2">
@@ -11,7 +13,7 @@ export default function DashboardOverview() {
                 </div>
                 <div>
                     <Tooltip content="Add a new room" showArrow placement="left">
-                        <Button className="bg-[#FF9F1C] text-white px-[4rem] shadowed-btn flex">
+                        <Button className="bg-[#FF9F1C] text-white px-[4rem] shadowed-btn flex" onClick={() => navigate('/admin/new')}>
                             <div>
                                 New
                             </div>

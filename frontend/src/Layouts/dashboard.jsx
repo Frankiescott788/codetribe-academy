@@ -1,10 +1,28 @@
 import { Badge, Image, User } from "@nextui-org/react";
+import { useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
+import { showToast } from "../../store/UIreducer";
 
 export default function Dashboardlayout() {
+
+    const { roomAdded } = useSelector(state => state.UI);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        (() => {
+            if(roomAdded) {
+                toast.success('room added successfully..');
+                dispatch(showToast(false))
+            }
+        })();
+    }, [roomAdded, dispatch]);
+
     return (
         <>
             <aside className="hidden lg:block fixed top-0 bottom-0 left-0 px-3 w-[18dvw] border-r">
+                <Toaster />
                 <div className="">
                     <div className="flex justify-center p-3">
                         <Image

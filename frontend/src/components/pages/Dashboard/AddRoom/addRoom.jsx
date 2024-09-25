@@ -1,10 +1,12 @@
 import { Button, Card, Input, Select, SelectItem, Textarea } from "@nextui-org/react";
 import useDB from "../../../../hooks/useDatabase";
+import { Toaster } from "react-hot-toast";
 
 export default function Add() {
-    const { setDescription, setNumberofbeds, setOccupancy, setRoomamenities, setRoomcategory, setRoomname, setRoomnumber, setRoompernight, setRoomtype, setPhoto, add_room, roomtype } = useDB();
+    const { loading,setDescription, setNumberofbeds, setOccupancy, setRoomamenities, setRoomcategory, setRoomname, setRoomnumber, setRoompernight, setRoomtype, setPhoto, add_room, roomtype } = useDB();
     return (
         <section className="pb-10">
+           
             <div className="mb-5">
                 <p className="text-2xl text-center lg:text-start">Room <span className="text-[#FF9F1C]">Management</span> - Add a Room</p>
                 <p className="text-tiny text-gray-400 text-center lg:text-start">Ensure guests have a great experience by listing detailed room information.</p>
@@ -37,8 +39,11 @@ export default function Add() {
                 </div>
             </div>
             <div className="py-4 flex justify-center lg:justify-start">
-                <Button className="bg-[#FF9F1C] text-white shadowed-btn px-[5rem]" onClick={add_room}>Submit</Button>
+                {!loading && <Button className="bg-[#FF9F1C] text-white shadowed-btn px-[5rem]" onClick={add_room}>Submit</Button>}
+                {loading && <Button className="bg-[#FF9F1C] text-white shadowed-btn px-[5rem]" onClick={add_room}>Loading...</Button>}
+                
             </div>
+            <Toaster/>
         </section>
     )
 }
