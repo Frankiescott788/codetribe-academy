@@ -11,6 +11,7 @@ import Isloading from "./components/loading"
 import Dashboardlayout from "./Layouts/dashboard"
 import DashboardOverview from "./components/pages/Dashboard/main"
 import Add from "./components/pages/Dashboard/AddRoom/addRoom"
+import Checkout from "./components/pages/checkout/checkout"
 
 function App() {
   const { isLoading } = useContext(AuthContext);
@@ -21,12 +22,13 @@ function App() {
         <Route path="/signup" element={<Signup />}/>
         <Route path="/signin" element={<Signin />}/>
         <Route path="/explore" element={<ExploreRooms />}/>
+        <Route path="/checkout" element={<Checkout />}/>
         <Route path="/admin/*" element={<Dashboardlayout />}>
           <Route index element={<DashboardOverview />}/>
           <Route path="new" element={<Add />}/>
         </Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   )
 }
