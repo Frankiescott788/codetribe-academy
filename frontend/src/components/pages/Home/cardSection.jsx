@@ -7,6 +7,7 @@ import imagefour from "../../../assets/pictures/Warm Elegance_ A Modern Bedroom 
 import { RiStarFill } from "@remixicon/react";
 import { useDispatch, useSelector } from 'react-redux';
 import { getRooms } from '../../../../store/crudReducer';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cards() {
 
@@ -14,6 +15,8 @@ export default function Cards() {
     const dispatch = useDispatch();
     const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure();
     const [book, setBook] = useState(null);
+
+    const navigate = useNavigate();
 
 
 
@@ -33,7 +36,7 @@ export default function Cards() {
     }
 
     return (
-        <section className=" mt-10 lg:mt-[15dvh]">
+        <section className=" mt-10 lg:mt-[25dvh]">
             <div className="text-center">
                 <p className="text-3xl ">Explore Our <span className="text-[#FF9F1C]">Exclusive</span> Rooms</p>
                 <p className="text-gray-400 text-tiny lg:px-[20rem]">Discover a range of luxurious accommodations designed to offer you comfort and style. Choose from our curated selection of rooms and suites to find the perfect stay for your needs.</p>
@@ -41,7 +44,7 @@ export default function Cards() {
             <div className="grid grid-cols-12 my-10 gap-5">
                 {rooms.length === 0 && <p>No rooms found</p>}
                 {rooms.length > 0 && rooms.slice(0, 6).map((room, i) => (
-                    <Card isFooterBlurred className="w-full h-[45dvh] col-span-12 lg:col-span-3 shadow-none border rounded-md" key={i}>
+                    <Card isFooterBlurred className="w-full h-[25rem] col-span-12 lg:col-span-3 shadow-none border rounded-md" key={i}>
                         <CardHeader className="absolute z-10 flex justify-between">
                             <p className=" uppercase font-bold bg-white flex px-1 rounded-full gap-1">
                                 <div className="mt-1">
@@ -104,7 +107,8 @@ export default function Cards() {
                             <div className="flex justify-center w-full my-2">
                                 <Button className="bg-[#ff9f1c] text-white px-[7rem] shadowed-btn rounded-full" onClick={() => {
                                     onOpen();
-                                    setBook(room)
+                                    setBook(room);
+                                    
                                 }}>Book now</Button>
                             </div>
                         </CardFooter>
@@ -157,7 +161,9 @@ export default function Cards() {
                                 </ModalBody>
                                 <ModalFooter>
                                 <Button className='bg-danger-100 text-danger-500 px-[2rem] ' onClick={onClose}>Cancel</Button>
-                                    <Button className='bg-[#ff9f1c] text-white px-[2rem]'>Proceed</Button>
+                                    <Button className='bg-[#ff9f1c] text-white px-[2rem]' onClick={() => {
+                                        navigate('/checkout/' + book.roomname)
+                                    }}>Proceed</Button>
                                 </ModalFooter>
                             </>
 

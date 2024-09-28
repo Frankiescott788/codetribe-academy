@@ -33,7 +33,7 @@ export default function Herosection() {
                         <div className={` hidden lg:flex w-[20rem] backdrop-blur-md p-3 text-white rounded-md absolute top-0 mt-[7rem] ms-[43rem] border text-tiny ${inView ? `animate__animated animate__fadeIn ` : ""}`}>
                             Experience the warmth and comfort of home, with personalized service and a welcoming atmosphere that feels like family.
                         </div>
-                        <div className="absolute left-0 ms-[6.5rem] lg:ms-[5rem] mt-5 lg:mt-0">
+                        <div className="absolute left-0 ms-[6.5rem] lg:ms-[5rem] mt-5 lg:mt-0 lg:mb-[10rem] ">
                             <div className={`flex gap-1 backdrop-blur-sm bg-white/20 w-[13rem] py-2 px-4 rounded-md border ${inView ? `animate__animated animate__fadeIn animate__slow` : ""}`}>
                                 <Avatar src={flora_pic} />
                                 <div>
@@ -60,7 +60,7 @@ export default function Herosection() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="hidden lg:flex justify-center absolute pt-[5rem]">
+                            <div className="hidden lg:flex justify-center absolute pb-[5rem]">
                                 <div className="the-container p-5  flex justify-between gap-10 ms-[5dvw] w-[80dvw] rounded-md">
                                     <div>
                                         <div className="flex gap-1">

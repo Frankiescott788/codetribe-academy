@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { db, fileUpload } from "../../firebase/config";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,6 +22,8 @@ export default function useDB() {
     const [loading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const { currentuser } = useContext(AuthContext);
+
+    const [checkout_room, setCheckout_room] = useState({});
 
     const add_room = async () => {
         try {
@@ -62,8 +64,15 @@ export default function useDB() {
         }
     };
 
-    const check_out = () => {
-        
+    const check_out = async (id) => {
+        try {
+            const checkout_room = await getDocs(query(collection(db, 'rooms'), where('roomname', '==', id)));
+            checkout_room.forEach(room => {
+                setCheckout_room(room.data());
+            })
+        } catch (error) {
+            console.log(error.message)
+        }
     }
     
 
@@ -77,6 +86,8 @@ export default function useDB() {
         setDescription,
         add_room,
         setPhoto,
-        loading
+        loading,
+        check_out,
+        checkout_room
     };
 }

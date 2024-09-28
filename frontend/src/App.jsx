@@ -22,7 +22,7 @@ function App() {
         <Route path="/signup" element={<Signup />}/>
         <Route path="/signin" element={<Signin />}/>
         <Route path="/explore" element={<ExploreRooms />}/>
-        <Route path="/checkout" element={<Checkout />}/>
+        <Route path="/checkout/:id" element={<Checkout />}/>
         <Route path="/admin/*" element={<Dashboardlayout />}>
           <Route index element={<DashboardOverview />}/>
           <Route path="new" element={<Add />}/>
