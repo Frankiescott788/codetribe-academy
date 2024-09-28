@@ -77,7 +77,7 @@ export default function Checkout() {
     <PayPalScriptProvider
       options={{
         "client-id":
-          "ASAMJTODZlQP4ZfjBAiEsfndZkbUOv7kCPaTXPKBypHFdg3FaXyVO0t1FYLvfdjhijZSpoKQkAAIMFIg",
+          "",
       }}
     >
       <section className="px-10 pt-[15dvh] ">
