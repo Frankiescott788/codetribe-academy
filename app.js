@@ -35,15 +35,28 @@ http.createServer( (req, res) => {
             fs.writeFile('data.json', JSON.stringify(jsonData, null, 2), (err) => {
                 if(err) {
                     console.log(err);
-                    return;
                 }
                 console.log('file written');
             });
         });
     }
     if(req.url === '/delete:id') {
-        
+        fs.readFile('data.json', (err, data) => {
+            if(err) {
+                console.log(err)
+            }
+            let file_string = null;
+            try {
+                file_string = JSON.parse(file_string);
+            } catch (error) {
+                console.log(error)
+            }
+
+            
+
+        })        
     }
     
 })
 .listen(8080)
+
