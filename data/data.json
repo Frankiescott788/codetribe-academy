@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "fd83",
+      "_id": "1098303b-ba62-4a2b-b551-67ff9ef77816",
+      "username": "frankie",
+      "email": "scottfrankie@gmail.com",
+      "password": "test123"
+    },
+    {
+      "id": "f7b6",
+      "_id": "b9401e3f-72ed-4f24-8a62-ffc42ddff869",
+      "username": "frankie",
+      "email": "mosehla",
+      "password": "test123"
+    },
+    {
+      "id": "f969",
+      "_id": "e7c6b204-d6f1-4084-8d98-fb2a23bff84c",
+      "username": "5t",
+      "email": "45t",
+      "password": "45t"
+    },
+    {
+      "id": "5534",
+      "_id": "f4eec62c-786f-49ff-9ec7-a4fef413f4b9",
+      "username": "eth",
+      "email": "th",
+      "password": "reg"
+    }
+  ]
+}
