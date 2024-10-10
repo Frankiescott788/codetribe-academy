@@ -11,7 +11,7 @@ const askQUestion = () => {
   function start_game () {
     console.log('Welcome to the quiz game');
     console.log('In this game you only have 10 seconds for each question for you to answer the question');
-    rl.question('Type "start game" to begin', answer => {
+    rl.question('Type "start game" to begin:' + ' ', answer => {
         if(answer === "start game") {
             first_question()
         }
@@ -26,7 +26,7 @@ const askQUestion = () => {
         console.log('\nTime out');
         console.log('moving to the next question...')
         second_question();
-      }, 5000);
+      }, 10000);
 
     rl.question("What is the capital city of south africa:", (answer) => {
         
@@ -55,7 +55,7 @@ const askQUestion = () => {
         console.log('\nTime out');
         console.log('moving to the next question...')
         third_question();
-      }, 5000);
+      }, 10000);
 
     rl.question("Who is the first black president in south africa:", answer => {
         
@@ -84,7 +84,7 @@ const askQUestion = () => {
         console.log('\nTime out');
         console.log('moving to the next question...');
         fourth_question(); 
-    }, 5000);
+    }, 10000);
 
     rl.question("In what year did COVID-19 start to impact globally:", answer => {
         
@@ -112,7 +112,7 @@ const askQUestion = () => {
         console.log('\nTime out');
         console.log('moving to the next question...')
         fifth_question(); 
-    }, 5000);
+    }, 10000);
 
     rl.question("In USA, they have states, what about south africa:", answer => {
         
@@ -141,7 +141,7 @@ const askQUestion = () => {
         console.log('End of game');
         rl.close();
         console.log(scores)
-      }, 5000);
+      }, 10000);
 
     rl.question("How many languages do we have in SA?:", answer => {
         
